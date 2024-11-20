@@ -3424,10 +3424,6 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 28.0
-- Name: AdvancedTrendmio
-  Id: g=6f1cb2b629dcaf9dff8f4dc395b473fe
-  Supertype: Screen
-  ReferenceType: HasComponent
 - Name: Ricette
   Id: g=011f7d0f90dc5357f043f90c71a284dc
   Supertype: Screen
