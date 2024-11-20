@@ -6079,3 +6079,7 @@ Children:
   Id: g=61ccde61bf03dc0e57b4cb540c8a5828
   Supertype: Screen
   ReferenceType: HasComponent
+- Name: Panelscript
+  Id: g=b8720400ef7ff28b01b641b94c8a46b2
+  Supertype: Screen
+  ReferenceType: HasComponent

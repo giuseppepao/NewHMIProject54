@@ -77,14 +77,6 @@ Project:
    Uri: 'urn:FTOptix:Recipe:Net'
    Module: FTOptix.Recipe.Net
    Version: 1.0
-  19:
-   Uri: 'urn:FTOptix:ODBCStore'
-   Module: FTOptix.ODBCStore
-   Version: 2.0
-  20:
-   Uri: 'urn:FTOptix:ODBCStore:Net'
-   Module: FTOptix.ODBCStore.Net
-   Version: 1.0
   21:
    Uri: 'urn:FTOptix:Alarm'
    Module: FTOptix.Alarm
@@ -114,14 +106,14 @@ Project:
    Module: FTOptix.NetLogic
    Version: 4.0
  Statistics:
-  TotalNodeCount: 2001
-  Objects: 405
-  ObjectTypes: 7
-  Variables: 1577
+  TotalNodeCount: 1993
+  Objects: 404
+  ObjectTypes: 8
+  Variables: 1569
   VariableTypes: 0
   DataTypes: 0
   Methods: 12
-  References: 134
+  References: 123
   ReferenceTypes: 0
   Files: 22
  Nodes:
