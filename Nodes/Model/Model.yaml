@@ -1,0 +1,29 @@
+Name: Model
+Id: g=cac7c82a68b171ab465d41f96a5f719b
+Type: ModelCategoryFolder
+Children:
+- Name: bool1
+  Type: BaseDataVariableType
+  DataType: Boolean
+- Name: bool2
+  Type: BaseDataVariableType
+  DataType: Boolean
+- Name: bool3
+  Type: BaseDataVariableType
+  DataType: Boolean
+- Name: Variable1
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable2
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable3
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable4
+  Type: BaseDataVariableType
+  DataType: Int32
+- Name: Variable5
+  Type: BaseDataVariableType
+  DataType: Int32
+- File: Ricettamia/Ricettamia.yaml

@@ -1,0 +1,682 @@
+Name: Alarms
+Id: g=3293e7cd8de0bb06cc725e017a984470
+Type: AlarmsCategoryFolder
+Children:
+- Name: ImportAndExportAlarms
+  Id: g=db1c20ae11cdeba8dd624661dbc31888
+  Type: NetLogic
+  WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+  Children:
+  - Name: BehaviourStartPriority
+    Id: g=169f6278ef014d28b09c3b7363fc196a
+    Type: BehaviourStartPriorityVariableType
+    DataType: Byte
+    Value: 180
+  - Class: Method
+    Name: ImportAlarms
+    Id: g=e073b27e4e92151698c6207e504d1733
+  - Class: Method
+    Name: ExportAlarms
+    Id: g=5b3ec11bb3dabc94480aec7b6b7f9075
+  - Name: CSVPath
+    Id: g=995c7bed4b9c46c364de3634f10c73c4
+    Type: BaseDataVariableType
+    DataType: AbsoluteResourceUri
+    Value: "file:///C:/temp/allarmi2.csv"
+  - Name: CharacterSeparator
+    Id: g=76a3e3b48557a303222d7dc771c7dced
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ";"
+  - Name: WrapFields
+    Id: g=4a142da0ce795ce14267884a2d6cb598
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: ns=15;LibraryReference
+    Id: g=ade4929ada9fad0708f0017baece56aa
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 15
+      },
+      "Body": {
+       "libraryGuid": "f0701375ee41467993d632db6a8fdaa5",
+       "objectGuid": "a6ee1600e16a9f4277b3724d54711be5",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: DigitalAlarm1
+  Id: g=17bad02ee07045debc49db20a05bfc86
+  Type: OffNormalAlarmController
+  Children:
+  - Name: NormalStateValue
+    Id: g=cf34064c0c428cee38023c21166b2a9f
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=d6d3b216b169fc432d448f729bac48a6
+    Type: BaseDataVariableType
+    DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=050621d67367410eaf7c466e507d2a66
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/NewHMIProject54/Model/bool1"
+  - Name: LastEvent
+    Id: g=37d8b993d4d7bb49452b6a7791279e56
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=21;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=154
+    Direction: Forward
+  - Name: Message
+    Id: g=ed8b10a166455c7d12ae21112645dbbb
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Allarme Bool1 Motore Fermo"}
+  - Name: MaxTimeShelved
+    Id: g=7648eafd56b77c818b11a11cca45b753
+    Type: BaseDataVariableType
+    DataType: Duration
+  - Name: PresetTimeShelved
+    Id: g=d47a6de66ba34dbb81ad2039f2c3c834
+    Type: BaseDataVariableType
+    DataType: Duration
+  - Name: OffNormalAlarmTypeHandler1
+    Id: g=89bf614e617e71d04037cc39a332ff02
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=09439be4955679c83c6d153193407799
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/ConditionType/AcknowledgeableConditionType/AlarmConditionType/DiscreteAlarmType/OffNormalAlarmType"
+    - Name: MethodsToCall
+      Id: g=0a31bce1431d25e98694f0c62cb2154c
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=f1c0ec988b28c503e919fa06a6926cea
+        Type: BaseObjectType
+        Children:
+        - Name: ns=3;ObjectPointer
+          Id: g=f381c7672c764949d657832fa46f63a0
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=cd90861cbe50184731a88734bed8b413
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=b325033872ec901ec97486af1e8e2411
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../../../Loggers/DataLogger1@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=7a38c2efa4a9b4d5ed51e2fc1d37fd44
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              Value: 2
+        - Name: ns=3;Method
+          Id: g=0524dc67f20bc08fdba530483575db40
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Log"
+    - Name: EventArguments
+      Id: g=7794aa23536785e449b118da284cc5a1
+      Type: OffNormalAlarmType
+      Children:
+      - Name: NormalState
+        Id: g=d830f92c2fbe77760afc6a65226b8111
+        Type: PropertyType
+        DataType: NodeId
+      - Name: EnabledState
+        Id: g=4460541371d67e9ddcefce6d3f4a8c54
+        Type: TwoStateVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: Id
+          Id: g=c411d00747735ceca32ce86e954fca41
+          Type: PropertyType
+          DataType: Boolean
+        - Name: ActiveState
+          Id: g=9a50780c2721dd9325ba8dc82fb450fc
+          Type: TwoStateVariableType
+          DataType: LocalizedText
+          ReferenceType: HasTrueSubState
+          Children:
+          - Name: Id
+            Id: g=05cbe65808705bca41441c81519ccfb8
+            Type: PropertyType
+            DataType: Boolean
+      - Name: ActiveState
+        Id: g=c5befc256a123f3c3e5775390a48b986
+        Type: TwoStateVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: Id
+          Id: g=f3b3e5ed0313ace16e7b17452216f04b
+          Type: PropertyType
+          DataType: Boolean
+      - Name: InputNode
+        Id: g=9139a50aa797e4569f73450299367b32
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SuppressedOrShelved
+        Id: g=75f63b63593e439c90b681fd15cc33da
+        Type: PropertyType
+        DataType: Boolean
+      - Name: AckedState
+        Id: g=75c855f0dced7f0ec1004effc23c371b
+        Type: TwoStateVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: Id
+          Id: g=47d1d3377abff250e5373151d7c452f0
+          Type: PropertyType
+          DataType: Boolean
+      - Class: Reference
+        Target: ns=0;i=9111
+        Direction: Forward
+      - Name: ConditionClassId
+        Id: g=7ee5b5def58bb526671a76a6c17d8d18
+        Type: PropertyType
+        DataType: NodeId
+      - Name: ConditionClassName
+        Id: g=b059e2aff6cefe77caa99bccaadd763f
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: ConditionName
+        Id: g=3fde5e9048b4d76000e59a11b8647123
+        Type: PropertyType
+        DataType: String
+      - Name: BranchId
+        Id: g=ee7b29655024ef582c8dabae704b337d
+        Type: PropertyType
+        DataType: NodeId
+      - Name: Retain
+        Id: g=8bac6261962f489ad0c5ddf2e9a002a9
+        Type: PropertyType
+        DataType: Boolean
+      - Name: Quality
+        Id: g=081ba8014eb04a30f466f4f4eeebf6cd
+        Type: ConditionVariableType
+        DataType: StatusCode
+        Children:
+        - Name: SourceTimestamp
+          Id: g=6d158c3a12ccd854bd87bdec1cb0164c
+          Type: PropertyType
+          DataType: UtcTime
+      - Name: LastSeverity
+        Id: g=ddd245322477771db3a8af105fc6e64e
+        Type: ConditionVariableType
+        DataType: UInt16
+        Children:
+        - Name: SourceTimestamp
+          Id: g=8b9c56888033d53af98edf44e7358dd6
+          Type: PropertyType
+          DataType: UtcTime
+      - Name: Comment
+        Id: g=9165d52fae32ec91efba2e56b729c090
+        Type: ConditionVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: SourceTimestamp
+          Id: g=1cd557c69ff2889da3290de1b4c97487
+          Type: PropertyType
+          DataType: UtcTime
+      - Name: ClientUserId
+        Id: g=1264f430cf5111b1156bc5ff56a275e7
+        Type: PropertyType
+        DataType: String
+      - Class: Reference
+        Target: ns=0;i=9028
+        Direction: Forward
+      - Class: Reference
+        Target: ns=0;i=9027
+        Direction: Forward
+      - Class: Reference
+        Target: ns=0;i=9029
+        Direction: Forward
+      - Name: EventId
+        Id: g=92304478ec4d837066f997c50943e302
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=c9b9caf42f86559fbd44b860e0f44d10
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=cd82271584d5a718d6f2558775b855bb
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=667d6df410e1bbc6de7b261f6a4a8de2
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=9119964bfce023e60286fefc8ffd33a6
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=ad03a7f67dfb58f580ea0e6a7d929a7d
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=c2ebc72c6c0189a401225f7d1330346d
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=4c7d81ed8a7b71a05aec581a642651e4
+        Type: PropertyType
+        DataType: UInt16
+- Name: DigitalAlarm2
+  Id: g=ae0507b69c28490bb6c5a2f1c61745b3
+  Type: OffNormalAlarmController
+  Children:
+  - Name: NormalStateValue
+    Id: g=6763e500ab6af77b33f1800b99f7546b
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=e879ebd881a0c9023f6bcbb08dc88399
+    Type: BaseDataVariableType
+    DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=7aa368fb770342fe98a1cfec40bbfb13
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/NewHMIProject54/Model/bool2"
+  - Name: LastEvent
+    Id: g=7ae0d5136d809c7e9eaf5fc9e1e41a34
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=21;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=154
+    Direction: Forward
+  - Name: AutoAcknowledge
+    Id: g=574196f819a0b7a822df12270b205220
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: AutoConfirm
+    Id: g=d4dc532f996822a6a897c064191794f8
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Message
+    Id: g=16c68db94bb48d79747e87c8bf8e4ef2
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Allarme Bool2 Motore in Fault"}
+    Children:
+    - Name: StringFormatter1
+      Id: g=0da3dc0b54f4b1716907b5a1e6eccb54
+      Type: StringFormatter
+      Children:
+      - Name: Format
+        Id: g=c596e5404367ee3cc62e0be81172cc0c
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        ReferenceType: HasParameter
+        Value: {"LocaleId":"en-US","Text":"Allarme Bool2 Motore in Fault - La sua Temperatura è {0}"}
+      - Name: ns=3;Source0
+        Id: g=13d9c5d1d3674d0adaabf33ac271146b
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=23c3dfbd1af9e457bd6b33e5e78b27d8
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../../../Model/Variable2"
+          Children:
+          - Name: IsPull
+            Id: g=43f3a98fcc895be09869190c4b66bb04
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+      - Name: IsPull
+        Id: g=2d19a619c5dd35239ae1e75e99e95aa2
+        Type: PropertyType
+        DataType: Boolean
+        ReferenceType: HasComponent
+        Value: true
+  - Name: MaxTimeShelved
+    Id: g=48251b19ecb58f748279ef68d4e473b8
+    Type: BaseDataVariableType
+    DataType: Duration
+  - Name: PresetTimeShelved
+    Id: g=0e1bda817d959fc3c1b93519da991cb9
+    Type: BaseDataVariableType
+    DataType: Duration
+- Name: DigitalAlarm3
+  Id: g=60d8a38961034731bbc9367c9467f4e6
+  Type: OffNormalAlarmController
+  Children:
+  - Name: NormalStateValue
+    Id: g=9ea78d1629b02827256983f10f7ac8e3
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=cbcd88d115d6cbab5a5ab97c12548f51
+    Type: BaseDataVariableType
+    DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=477f9cf25b604f91a1b7856b66791c1d
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/NewHMIProject54/Model/bool3"
+  - Name: LastEvent
+    Id: g=d9ec952a6d1c8fa13fa61f9adbc96c5c
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=21;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=154
+    Direction: Forward
+  - Name: AutoAcknowledge
+    Id: g=9f8266215c820271165c1d2a5ab945f4
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: AutoConfirm
+    Id: g=ce5d67b633d7634ddf2908f099d0f926
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Severity
+    Id: g=a244a60bfa4b9c7c093a9170d304b580
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 2
+  - Name: Message
+    Id: g=8818bf622caf260eabe05a58966f5ae2
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Allarme Bool3 Motore in Fault"}
+  - Name: MaxTimeShelved
+    Id: g=765a3325d4afda1b414b046b0f5e24ea
+    Type: BaseDataVariableType
+    DataType: Duration
+  - Name: PresetTimeShelved
+    Id: g=df92beb294f39cd7b4a55c0a2765ad16
+    Type: BaseDataVariableType
+    DataType: Duration
+- Name: DigitalAlarm4
+  Id: g=524bce75ccf04fdbb3e27710b822d3f4
+  Type: OffNormalAlarmController
+  Children:
+  - Name: NormalStateValue
+    Id: g=feb66929f2a6165b0330f4f894142750
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=a68bf746222b0cbad67194bed71bb262
+    Type: BaseDataVariableType
+    DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=e112ce10b5bd4e22a6de3fbc79f8809b
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/NewHMIProject54/Model/Variable1.3"
+  - Name: LastEvent
+    Id: g=16e18602c4f60012f4fc6a6c4e9f8c85
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=21;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=154
+    Direction: Forward
+  - Name: AutoAcknowledge
+    Id: g=706949c6f6b35079b310018bc7c1613c
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: AutoConfirm
+    Id: g=36d2b17ae1082fea2f95ad8fb48dd4e4
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Severity
+    Id: g=faeaf1e85d55edc2d6681ef8fa978415
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 2
+  - Name: Message
+    Id: g=bf516e94eaf4295ffcfaa8a54795a626
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Allarme 4.3 Motore in Fault"}
+  - Name: MaxTimeShelved
+    Id: g=1791bf23672837c3dc60aec5864b6507
+    Type: BaseDataVariableType
+    DataType: Duration
+  - Name: PresetTimeShelved
+    Id: g=ca1ae97252409fad4084473136bf5a40
+    Type: BaseDataVariableType
+    DataType: Duration
+- Name: DigitalAlarm5
+  Id: g=710ac02ae3454aaeab875fca4abe9f48
+  Type: OffNormalAlarmController
+  Children:
+  - Name: NormalStateValue
+    Id: g=39ee974be4d880a2facdf46bec5f7082
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=6e8cc3e80c77b26f1a025814b0c67d3e
+    Type: BaseDataVariableType
+    DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=ab468c76cff34c3f8dfe3ca2cb8976e1
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/NewHMIProject54/Model/Variable1.2"
+  - Name: LastEvent
+    Id: g=317bf05dcaf6fff1555855ec3180ec80
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Class: Reference
+    Target: ns=21;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=21;i=154
+    Direction: Forward
+  - Name: AutoAcknowledge
+    Id: g=3b541b1d1adc79755dd23885ab3be91b
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: AutoConfirm
+    Id: g=7e278e1dd0cd259806c670736e4b64fb
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Severity
+    Id: g=4c5e1735dc590d53289f581693b94c46
+    Type: BaseDataVariableType
+    DataType: UInt16
+    Value: 3
+  - Name: Message
+    Id: g=0f62bcbe6a995098bcb413cffad8dc93
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Allarme 4.2 Motore in Avaria"}
+  - Name: MaxTimeShelved
+    Id: g=02a23027f566984c6111279851031c40
+    Type: BaseDataVariableType
+    DataType: Duration
+  - Name: PresetTimeShelved
+    Id: g=3a6f1c88eb9ef068cbe196a16bda959a
+    Type: BaseDataVariableType
+    DataType: Duration
